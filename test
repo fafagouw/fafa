@@ -1,0 +1,214 @@
+// EXAMPLE
+========================================
+// Register [POST]
+// Request
+{
+	"user_name":"faizal",
+	"user_email":"faizal@tester.com"
+}
+
+// Response
+{
+	"http_code":201,
+	"signature_key":"xaxaxa",
+	"message":"Register success, please remember you SIGNATURE KEY"
+}
+
+
+========================================
+// Product [GET]
+{
+	"http_code":200,
+	"items":[{
+		"product_id":"EXOTIC",
+		"name":"EXOTIC",
+		"price":"1500",
+		"stock":"10"
+	},{
+		"product_id":"EMULSIFIER",
+		"name":"EMULSIFIER",
+		"price":"800",
+		"stock":"50"
+	},{
+		"product_id":"FIXADURA",
+		"name":"FIXADURA",
+		"price":"800",
+		"stock":"50"
+	}, {
+		"product_id":"HS500",
+		"name":"Hand Soap",
+		"price":"800",
+		"stock":"50"
+	}]
+}
+
+
+========================================
+// Sales Insert [POST]
+// Request
+//////1 Pak catur
+{
+  "signature_key": "xaxaxa",
+  "payment_type": "cash",
+  "gross_amount": 7100,
+  "currency": "IDR",
+  "items" : [
+	{
+		"item_id": "EXOTIC",
+		"qty":1,
+		"price": 1500,
+		"total": 1500
+	},
+	{
+		"item_id": "EMULSIFIER",
+		"qty": 5,
+		"price": 800,
+		"total": 4000
+	},
+	{
+		"item_id": "FIXADURA",
+		"qty": 2,
+		"price": 800,
+		"total": 1600
+	}
+  ]
+}
+
+========================================
+
+// Response
+{
+	"http_code":201,
+	"sales_id":1,
+	"message":"Sales was inserted"
+}
+
+
+========================================
+// Sales List [POST]
+{
+	"signature_key": "xaxaxa"
+}
+
+// Response
+{
+	"http_code":200,
+	"items":[
+		{"sales_id":"1",
+		"signature_key":"xaxaxa",
+		"payment_type":"cash",
+		"gross_amount":"7100",
+		"currency":"IDR",
+		"sales_status":"aktif",
+		"created":"30-8-2019"
+	}],
+	"count":1
+}
+
+
+=======================================================================
+///// 2 PAK ARIF
+ 
+
+ {
+  "signature_key": "xaxaxa",
+  "payment_type": "cash",
+  "gross_amount": 1600,
+  "currency": "IDR",
+  "items" : [
+	{
+		"item_id": "FIXADURA",
+		"qty": 2,
+		"price": 800,
+		"total": 1600
+	}
+  ]
+}
+
+
+========================================
+
+// Response
+{
+	"http_code":201,
+	"sales_id":1,
+	"message":"Sales was inserted"
+}
+
+
+========================================
+// Sales List [POST]
+{
+	"signature_key": "xaxaxa"
+}
+
+// Response
+{
+	"http_code":200,
+	"items":[
+		{"sales_id":"1",
+		"signature_key":"xaxaxa",
+		"payment_type":"cash",
+		"gross_amount":"1600",
+		"currency":"IDR",
+		"sales_status":"aktif",
+		"created":"30-8-2019"
+	}],
+	"count":1
+}
+
+=================================================================================
+
+//// 3 PAK WAWAN
+
+
+{
+  "signature_key": "xaxaxa",
+  "payment_type": "cash",
+  "gross_amount": 15500,
+  "currency": "IDR",
+  "items" : [
+	{
+		"item_id": "HS500",
+		"qty":5,
+		"price": 1500,
+		"total": 7500
+	}, {
+		"item_id": "FIXADURA",
+		"qty": 10,
+		"price": 800,
+		"total": 8000
+	}
+  ]
+}
+
+========================================
+
+// Response
+{
+	"http_code":201,
+	"sales_id":1,
+	"message":"Sales was inserted"
+}
+
+
+========================================
+// Sales List [POST]
+{
+	"signature_key": "xaxaxa"
+}
+
+// Response
+{
+	"http_code":200,
+	"items":[
+		{"sales_id":"1",
+		"signature_key":"xaxaxa",
+		"payment_type":"cash",
+		"gross_amount":"9600",
+		"currency":"IDR",
+		"sales_status":"aktif",
+		"created":"30-8-2019"
+	}],
+	"count":1
+}
